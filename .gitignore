@@ -1,0 +1,8 @@
+ipynb_checkpoints
+*.ipynb_checkpoints
+__pycache__/
+*.arpa
+*.mmap
+*.txt
+*.json
+*.tsv
