@@ -37,7 +37,7 @@ For some analysis/plotting; convenient, but non-essential and relatively easy to
 
 ## Language-model friendly and relational representations of corpus data
 
-The goal of this notebook is to produce (/document the production of) a representation of Buckeye corpus data whose vocabulary has been normalized with respect to the Fisher corpus and where utterance segmentation has been performed. The motivation for doing this is applying a language model trained on (a slightly processed version of) the Fisher corpus to Buckeye.
+The goal of the notebook `Preprocessing Buckeye corpus transcriptions for ease of processing and use with kenlm.ipynb` is to produce (/document the production of) a representation of Buckeye corpus data whose vocabulary has been normalized with respect to the Fisher corpus and where utterance segmentation has been performed. The motivation for doing this is applying a language model trained on (a slightly processed version of) the Fisher corpus to Buckeye.
 
 ### Processing steps
 
