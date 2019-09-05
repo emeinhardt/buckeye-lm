@@ -2,7 +2,7 @@
 
 This repository contains two notebooks for working with the Buckeye corpus. In particular, the code here
  - aligns transcriptions with Unicode IPA symbols.
- - produces representations of the Buckeye corpus data convenient for use with a language model (specifically one trained on the Fisher corpus).
+ - produces representations of the Buckeye corpus data convenient for use with a language model (specifically one trained on the Fisher corpus) and for predicting reduction.
 
 ## IPA alignment
 
@@ -37,7 +37,7 @@ For some analysis/plotting; convenient, but non-essential and relatively easy to
 
 ## Language-model friendly and relational representations of corpus data
 
-The goal of the notebook `Preprocessing Buckeye corpus transcriptions for ease of processing and use with kenlm.ipynb` is to produce (/document the production of) a representation of Buckeye corpus data whose vocabulary has been normalized with respect to the Fisher corpus and where utterance segmentation has been performed. The motivation for doing this is applying a language model trained on (a slightly processed version of) the Fisher corpus to Buckeye.
+The main goal of the notebook `Preprocessing Buckeye corpus transcriptions for ease of processing and use with kenlm` is to produce (/document the production of) a representation of Buckeye corpus data whose vocabulary has been normalized with respect to the Fisher corpus and where utterance segmentation has been performed. The motivation for doing this is applying a language model trained on (a slightly processed version of) the Fisher corpus to Buckeye. The second goal of the notebook is creating annotated relations describing each of the utterances and wordform tokens in the Buckeye corpus for the purpose of predicting reduction.
 
 ### Processing steps
 
@@ -60,8 +60,15 @@ Less important:
  
  ### Outputs
  
- If run successfully, this notebook will create four files as outputs:
+ If run successfully, this notebook will create the following files as outputs:
  1. A .json file containing a list of objects (Python dictionaries), where each object is a finitary relation describing an utterance (and associated metadata) in the Buckeye corpus.
  2. A .txt file containing one utterance from Buckeye per line, suitable for use with a language model.
  3. A .txt file containing the vocabulary (one wordform per line) of the previous file.
  4. A .json file containing a list of objects (Python dictionaries), where each object is a finitary relation describing a wordform token (and associated metadata) in the Buckeye corpus.
+ 5. A version of #4 for just those wordforms that meet certain exclusion criteria ('target' wordforms).
+ 6. A version of #3 for just those wordforms that FIXME
+ 7. Text files containing the {1,2,3,4} {preceding, following} wordforms of each 'target' wordform, plus a JSON file containing the full bidirectional context of each 'target' wordform.
+ 8. A TSV file relating each non-disfluent, un-interrupted orthographic wordform in the corpus with a non-unk and non-empty-string processed orthographic representation to its unique phonemic transcription. 
+ 9. A TSV file relating each non-disfluent, un-interrupted orthographic wordform in the corpus with a non-unk and non-empty-string processed orthographic representation to its phoneetic transcriptions. 
+ 10. A JSON file containing information (viz. including speech rate statistics) about speakers in the corpus.
+ 11. A JSON file containing information (viz. including duration statistics) about word types in the corpus.
